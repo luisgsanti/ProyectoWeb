@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<body>
+    <div class = "bg-dark text-white py-3">
+        <ul class="nav nav-pills nav-fill">
+          
+          <li class="nav-item">
+            <div ngbDropdown class="d-inline-block">
+              <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Gestionar Docentes</button>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <button ngbDropdownItem routerLink="/Adminitrador/MenuDeGestion/NuevoDocente">Nuevo Docente</button>
+                <div class="dropdown-divider"></div>
+                <button ngbDropdownItem routerLink="/Adminitrador/MenuDeGestion/ConsultarDocentes">Consultar Docentes Registrados</button>
+              </div>
+            </div>
+          </li>
+    
+          <li class="nav-item">
+            <div ngbDropdown class="d-inline-block">
+              <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Detalles De Evaluacion</button>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <button ngbDropdownItem >Iniciar Tiempo De Evaluacion</button>
+                <div class="dropdown-divider"></div>
+                <button ngbDropdownItem >Asignar Calificadores</button>
+                <button ngbDropdownItem >Estado Actual De Los Evaluados</button>
+                <button ngbDropdownItem >Detalles Del Periodo De Evaluacion</button>
+                </div>
+            </div>
+          </li>
+    
+          <li class="nav-item">
+            <div ngbDropdown class="d-inline-block">
+              <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Gestionar Formulario</button>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <button ngbDropdownItem routerLink="/Adminitrador/MenuDeFormularios/FormularioActual">Formulario Actual</button>
+                <div class="dropdown-divider" ></div>
+                <button ngbDropdownItem routerLink="/Adminitrador/MenuDeFormularios/AgregarPregunta">Agregar Nueva Pregunta</button>
+                <button ngbDropdownItem routerLink="/Adminitrador/MenuDeFormularios/ConsultarPreguntas">Consultar Preguntas</button>
+               
+              </div>
+            </div>
+          </li>
+
+            <li>
+                <div class="btn-group mr-3">
+                    <button routerLink="/Adminitrador/principal" type="button" class="btn btn-primary">HOME</button>
+                    <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+                      <button class="btn btn-primary dropdown-toggle-split" ngbDropdownToggle></button>
+                      <div class="dropdown-menu" ngbDropdownMenu>
+                        <button ngbDropdownItem routerLink="/Inicio">Salir</button>
+                      </div>
+                    </div>
+                </div>
+            </li>
+            
+        </ul>
+    
+    </div>
+</body>
+<router-outlet></router-outlet>

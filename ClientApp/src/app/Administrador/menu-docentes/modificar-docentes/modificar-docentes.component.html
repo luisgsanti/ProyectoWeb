@@ -1,0 +1,108 @@
+<app-barra-de-navegacion></app-barra-de-navegacion>
+<br><br>
+
+<form class="needs-validation" novalidate>
+<div *ngIf="docente">
+<div class = "container">
+    
+    <div class = "Titulo">
+        <h1>Modificar Datos Del Docente</h1><br>
+    </div>
+
+    <br>
+    <div>
+        <h1>Datos Personales</h1><br>
+    </div>
+    <div class="form-row">
+        <div class="col-md-4 mb-3">
+            <label for="validationServer01">Identificacion</label>
+            <input [(ngModel)]="docente.identificacion" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationServer01" placeholder="Identificacion">
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="validationServer02">Primer Nombre</label>
+            <input [(ngModel)]="docente.primerNombre" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationServer02" placeholder="Primer Nombre">
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="validationServer02">Segundo Nombre</label>
+            <input [(ngModel)]="docente.segundoNombre" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationServer02" placeholder="Segundo Nombre">
+        </div>
+    </div>
+
+    <div class="form-row">
+            <div class="col-md-4 mb-3">
+                <label for="validationServer01">Primer Apellido</label>
+                <input [(ngModel)]="docente.primerApellido" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationServer01" placeholder="Primer Apellido">
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="validationServer02">Segundo Apellido</label>
+                <input [(ngModel)]="docente.segundoApellido" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationServer02" placeholder="Segundo Apellido">
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="validationServerUsername">Correo Electronico</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroupPrepend3">@</span>
+                    </div>
+                    <input  [(ngModel)]="docente.correo" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationServerUsername" placeholder="Correo Electronico" aria-describedby="inputGroupPrepend3">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row">
+
+                <div class="col-md-4 mb-3">
+                        <label for="validationServer03">Genero</label>
+                        <input [(ngModel)]="docente.genero" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationServer03" placeholder="Fecha De Nacimiento">
+                </div>
+                    
+            
+            <!--
+            <div class="col-md-4 mb-3">
+                <label for="validationServer03">Fecha De Nacimiento</label>
+                <input [(ngModel)]="docente.fechaNacimiento" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationServer03" placeholder="Fecha De Nacimiento">
+            </div>
+            
+            <div class="col-md-4 mb-3">
+                <label for="validationServer05">Telefono</label>
+                <input [(ngModel)]="docente.telefono" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationServer05" placeholder="Telefono">
+            </div>
+            -->
+        </div>
+
+        <br><br>
+        <div>
+            <h1>Datos Academicos</h1><br>
+        </div>
+        <div class="form-row">
+            <div class="col-md-3 mb-3">
+                <label for="validationServer01">Cargo</label>
+                <input [(ngModel)]="docente.cargo" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationServer01" placeholder="Cargo">
+            </div>
+
+            <div class="col-md-3 mb-3">
+                <label for="validationServer02">Facultad</label>
+                <input [(ngModel)]="docente.facultad" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationServer02" placeholder="Facultad">
+            </div>
+        </div>
+
+
+        
+        <br>
+        
+
+        <div class="form-row">
+            <div class="col-md-2 mb-3">
+                <button (click)="update()" class="btn btn-primary" type="submit">Guardar Cambios</button>
+            </div>
+            <div  class="col-md-2 mb-3">
+                <button (click)="desactivar()" class="btn btn-primary" type="submit">Desactivar</button>
+            </div>
+        </div>
+        
+    
+    <br><br>
+
+</div>
+</div>
+
+</form>

@@ -1,0 +1,32 @@
+<app-barra-de-navegacion></app-barra-de-navegacion>
+
+<body>
+    <br>
+    <div class = "container">
+
+        <div class = "Titulo">
+            <h1>Agregar Nueva Pregunta</h1><br>
+        </div>
+
+        <div class="form-row">
+            <div class = "col-md-12 mb-1">
+                <label for="validationServer01">Digite la pregunta que desea agregar:</label>
+                <br>
+                <input  [(ngModel)]="pregunta.descripcion" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationServer01" placeholder="Pregunta">
+            </div>
+        </div>
+        <div class="form-group col-md-4">
+            <label for="inputState">Categoria</label>
+            <select  [(ngModel)]="pregunta.categoria" [ngModelOptions]="{standalone: true}" id="inputState" class="form-control">
+                <option selected>RESPONSABILIDAD</option>
+                <option >PUNTUALIDAD Y CUMPLIMIENTO</option>
+                <option >EFICIENCIA</option>
+                <option >RELACIONES INTERPERSONALES</option>
+            </select>
+        </div>
+
+        <br>
+
+        <button (click)="add()" class="btn btn-primary">Agregar</button> 
+    </div>
+</body>

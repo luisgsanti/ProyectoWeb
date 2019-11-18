@@ -1,0 +1,30 @@
+.Titulo {
+    text-align: center;
+    color: blue
+  }
+
+button{
+    width: 150px;
+}
+/*
+body {
+
+  background: url(../../../img/Fondo_Azul.jpg) no-repeat center top;
+  background-size: cover;
+}
+*/
+label{
+color: rgb(12, 17, 61);
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  display: block;
+}
+
+h1, a{
+color: rgb(12, 17, 61)
+}
+
+button{
+background-color:  rgb(12, 17, 61)
+}
