@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -50,6 +51,7 @@ import { AsignarEvaluadorComponent } from './Administrador/menu-evaluacion/asign
     NgbPaginationModule, 
     NgbAlertModule,
     FormsModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
     ]),
