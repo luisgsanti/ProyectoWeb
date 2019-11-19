@@ -1,4 +1,3 @@
-<app-barra-de-navegacion></app-barra-de-navegacion>
 <form #form = "ngForm" autocomplete="off">
 <body>
     <br>
@@ -53,11 +52,10 @@
             <div class="form-group col-md-4">
                 <label for="inputState">* Genero</label>
                 <select  [(ngModel)]="docente.genero" [ngModelOptions]="{standalone: true}" id="inputState" class="form-control" required>
-                    <option selected>MASCULINO</option>
+                    <option selected> MASCULINO </option>
                     <option >FEMENINO</option>
                 </select>
             </div>
-            
             
             <!-- 
 
@@ -88,10 +86,52 @@
                     <option >DOCENTE EN COMISION ADMINISTRATIVA</option>
                 </select>
             </div>
+
+            <div class="form-group col-md-4">
+                    <label for="inputState">* Programa </label>
+                    <select  [(ngModel)]="docente.Programa" [ngModelOptions]="{standalone: true}" id="inputState" class="form-control" required>
+                        <option selected>MÚSICA</option>
+                        <option>LICENCIATURA EN ARTE</option>
+                        <option>LICENCIATURA EN MATEMÁTICAS</option>
+                        <option>LICENCIATURA EN ESPAÑOL E INGLES</option>
+                        <option>LICENCIATURA EN EDUCACIÓN FÍSICA</option>
+                        <option>LICENCIATURA EN CIENCIAS NATURALES</option>
+                        <option>MICROBIOLOGÍA</option>
+                        <option>INSTRUMENTACIÓN QUIRÚRGICA</option>
+                        <option>ENFERMERÍA</option>
+                        <option>DERECHO</option>
+                        <option>PSICOLOGÍA</option>
+                        <option>SOCIOLOGÍA</option>
+                        <option>INGENIERÍA AMBIENTAL Y SANITARIA</option>
+                        <option>INGENIERÍA DE SISTEMAS</option>
+                        <option>INGENIERÍA ELECTRÓNICA</option>
+                        <option>INGENIERÍA AGROINDUSTRIAL</option>
+                        <option>COMERCIO INTERNACIONAL</option>
+                        <option>ECONOMÍA</option>
+                        <option>ADMINISTRACIÓN DE EMPRESAS</option>
+                        <option>CONTADURÍA PÚBLICA</option>
+                    </select>
+                </div>
            
+            <div class="form-group col-md-4">
+                    <label for="inputState">* Facultad</label>
+                    <select  [(ngModel)]="docente.facultad" [ngModelOptions]="{standalone: true}" id="inputState" class="form-control" required>
+                        <option selected>CIENCIAS DE LA SALUD</option>
+                        <option>CIENCIAS BÁSICAS Y DE EDUCACIÓN</option>
+                        <option >BELLAS ARTES</option>
+                        <option >CIENCIAS ADMINISTRATIVAS CONTABLES Y ECONÓMICAS</option>
+                        <option >INGENIERÍAS Y TECNOLÓGICAS</option>
+                        <option >DERECHO, CIENCIAS POLÍTICAS Y SOCIALES</option>
+                    </select>
+                </div>
+                <div class="col-md-3 mb-3">
+                        <label for="validationServer02">* Programa</label>
+                        <input readonly="readonly" [(ngModel)]="docente.Programa" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationServer02" placeholder="Programa" required>
+                    </div>
+
             <div class="col-md-3 mb-3">
                 <label for="validationServer02">* Facultad</label>
-                <input [(ngModel)]="docente.facultad" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationServer02" placeholder="Facultad" required>
+                <input readonly="readonly" [(ngModel)]="docente.facultad" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationServer02" placeholder="Facultad" required>
             </div>
         </div>
         
@@ -103,4 +143,5 @@
 </div>
 </body>
 </form>
+<app-barra-de-navegacion></app-barra-de-navegacion>
 

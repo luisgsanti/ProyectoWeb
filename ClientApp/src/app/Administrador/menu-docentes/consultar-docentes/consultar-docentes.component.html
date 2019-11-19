@@ -1,68 +1,53 @@
-<app-barra-de-navegacion></app-barra-de-navegacion>
-
 <body>
 
-<br>
-
-<div class = "container">
-    
-    <div class = "Titulo">
-        <h1>Consultar Docentes</h1><br>
-    </div>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link">Digite una palabra<span class="sr-only">(current)</span></a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-                <button class="btn btn-primary" type="submit">Filtrar</button>
-            </form>
-        </div>
-    </nav>
     <br>
 
-    <table class="table table-striped">
-        <thead>
-            <tr>
-            <th scope="col">#</th>
-            <th scope="col">Identificacion</th>
-            <th scope="col">Primer Nombre</th>
-            <th scope="col">Segundo Nombre</th>
-            <th scope="col">Primer Apellido</th>
-            <th scope="col">Segundo Apellido</th>
-            <th scope="col">Correo</th>
-            
-            <th scope="col">Estado</th>
-            
-            <th scope="col">Cargo</th>
-            <th scope="col">Facultad</th>
-            <th scope="col">Ver</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let docente of docentes">
-                <td>{{docente.id}}</td>
-                <td>{{docente.identificacion}}</td>
-                <td>{{docente.primerNombre}}</td> 
-                <td>{{docente.segundoNombre}}</td>            
-                <td>{{docente.primerApellido}}</td>
-                <td>{{docente.segundoApellido}}</td>
-                <td>{{docente.correo}}</td>
-                <td>{{docente.estado}}</td>
+    <div class = "container">
+        
+        <div class = "Titulo">
+            <h1>Consultar Docentes</h1><br>
+        </div>
+
+        <br>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Identificacion</th>
+                <th scope="col">Primer Nombre</th>
+                <th scope="col">Segundo Nombre</th>
+                <th scope="col">Primer Apellido</th>
+                <th scope="col">Segundo Apellido</th>
+                <th scope="col">Correo</th>
                 
-                <td>{{docente.cargo}}</td>
-                <td>{{docente.facultad}}</td>
-                <td><a routerLink="/Adminitrador/MenuDeGestion/ModificarDocente/{{docente.id}}">ver</a></td>
-            </tr>               
-        </tbody>
-    </table>
+                <th scope="col">Estado</th>
+                
+                <th scope="col">Cargo</th>
+                <th scope="col">Facultad</th>
+                <th scope="col">Ver</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let docente of docentes">
+                    <td>{{docente.id}}</td>
+                    <td>{{docente.identificacion}}</td>
+                    <td>{{docente.primerNombre}}</td> 
+                    <td>{{docente.segundoNombre}}</td>            
+                    <td>{{docente.primerApellido}}</td>
+                    <td>{{docente.segundoApellido}}</td>
+                    <td>{{docente.correo}}</td>
+                    <td>{{docente.estado}}</td>
+                    
+                    <td>{{docente.cargo}}</td>
+                    <td>{{docente.facultad}}</td>
+                    <td><a routerLink="/Adminitrador/MenuDeGestion/ModificarDocente/{{docente.id}}">ver</a></td>
+                </tr>               
+            </tbody>
+        </table>
 
-    <br><br>
-</div>
-
+        <br><br>
+    </div>
 </body>
+
+<app-barra-de-navegacion></app-barra-de-navegacion>
