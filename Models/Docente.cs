@@ -17,8 +17,8 @@ namespace ProyectoWeb.Models
 
         public string SegundoNombre { get; set; }
         public string SegundoApellido { get; set; }
-        public string FechaNacimiento { get; set; }
-        public int Telefono { get; set; }
+        //public string FechaNacimiento { get; set; }
+        //public int Telefono { get; set; }
         public string Estado { get; set; }
     }
 }

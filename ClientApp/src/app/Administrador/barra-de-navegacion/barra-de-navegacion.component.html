@@ -12,13 +12,14 @@
       </div>
       <div class="sidebar-header">
         <div class="user-pic">
-          <img class="img-responsive img-rounded" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
+          <img class="img-responsive img-rounded"
+            src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
             alt="User picture">
         </div>
         <div style="cursor: default" class="user-info">
-          <span class="user-name"><strong>Pedro Arnedo</strong>
+          <span class="user-name"><strong>Administrador</strong>
           </span>
-          <span class="user-role">Administrator</span>
+          <span class="user-role">Administrador</span>
           <span class="user-status">
             <i class="fa fa-circle"></i>
             <span>Online</span>
@@ -48,7 +49,7 @@
             </div>
           </li>
           <li class="sidebar-dropdown">
-            <a  style="cursor: pointer" >
+            <a style="cursor: pointer">
               <i class="fas fa-file-alt"></i>
               <span>Detalles Evaluacion</span>
             </a>
@@ -90,11 +91,11 @@
             </div>
           </li>
           <li>
-              <a routerLink="/Adminitrador/principal" style="cursor: pointer">
-                <i class="fas fa-home"></i>
-                <span>Volver a Inicio</span>
-              </a>
-            </li>
+            <a routerLink="/Adminitrador/principal" style="cursor: pointer">
+              <i class="fas fa-home"></i>
+              <span>Volver a Inicio</span>
+            </a>
+          </li>
         </ul>
       </div>
       <!-- sidebar-menu  -->
@@ -118,17 +119,14 @@
       </a>
     </div>
   </nav>
-<!-- sidebar-wrapper  -->
-<main class="page-content">
-  <div class="container-fluid">
-    <router-outlet></router-outlet>
-    <hr>
-  </div>
-</main>
-<!-- page-content" -->
+  <!-- sidebar-wrapper  -->
+  <main class="page-content">
+    <div class="container-fluid">
+      <router-outlet></router-outlet>
+      <hr>
+    </div>
+  </main>
+  <!-- page-content" -->
 
 </div>
 <!-- page-wrapper -->
-
-
-
