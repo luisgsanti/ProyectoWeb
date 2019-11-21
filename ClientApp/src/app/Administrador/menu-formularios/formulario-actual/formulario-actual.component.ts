@@ -18,7 +18,7 @@ export class FormularioActualComponent implements OnInit {
   }
 
   getAll(){
-    this.preguntaService.getAll().subscribe(preguntas=>this.preguntas=preguntas);
+    this.preguntaService.getActivas().subscribe(preguntas=>this.preguntas=preguntas);
   }
 
 

@@ -21,7 +21,7 @@
           <th scope="col">Estado</th>
           <th scope="col">Cargo</th>
           <th scope="col">Facultad</th>
-          <th scope="col">Ver</th>
+          <th scope="col">Editar</th>
         </tr>
       </thead>
       <tbody>
@@ -36,7 +36,8 @@
           <td>{{docente.estado}}</td>
           <td>{{docente.cargo}}</td>
           <td>{{docente.facultad}}</td>
-          <td><a routerLink="/Adminitrador/MenuDeGestion/ModificarDocente/{{docente.id}}">ver</a></td>
+          <td><a routerLink="/Adminitrador/MenuDeGestion/ModificarDocente/{{docente.id}}" class="button"><span><i
+                  class="far fa-edit"></i></span></a></td>
         </tr>
       </tbody>
     </table>

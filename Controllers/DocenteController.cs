@@ -38,6 +38,12 @@ namespace ProyectoWeb.Controllers
         return await _context.Docentes.ToListAsync();
         }
 
+        [HttpGet("ActivoAdministrativo")]
+        public async Task<ActionResult<IEnumerable<Docente>>> GetTaskActivas()
+        {
+            return await _context.Docentes.Where(p=>p.Estado=="ACTIVO" & p.Cargo!="DOCENTE").ToListAsync();
+        }
+
         // GET: api/Task/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Docente>> GetTaskItem(int id)

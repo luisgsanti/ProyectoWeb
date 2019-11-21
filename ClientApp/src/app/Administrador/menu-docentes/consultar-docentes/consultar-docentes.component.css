@@ -19,8 +19,10 @@ h1, a{
 color: rgb(12, 17, 61)
 }
 
-button{
-background-color:  rgb(12, 17, 61)
+.button{
+  display: inline-block;
+  color: black;
+  padding: 10px;
 }
 
 table{

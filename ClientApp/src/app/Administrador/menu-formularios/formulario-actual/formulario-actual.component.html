@@ -18,9 +18,9 @@
         </thead>
         <tbody>
             <tr *ngFor="let pregunta of preguntas">
-                <td><span *ngIf="pregunta.estado===true;"> <td>{{pregunta.id}}</td></span></td>
-                <td><span *ngIf="pregunta.estado===true;"> <td>{{pregunta.descripcion}}</td></span></td>
-                <td><span *ngIf="pregunta.estado===true;"> <td>{{pregunta.categoria}}</td></span></td>
+                <td>{{pregunta.id}}</td>
+                <td>{{pregunta.descripcion}}</td>
+                <td>{{pregunta.categoria}}</td>
             </tr>               
         </tbody>
     </table>

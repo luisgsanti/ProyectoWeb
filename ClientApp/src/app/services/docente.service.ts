@@ -37,6 +37,14 @@ export class DocenteServiceService {
         );
       }
 
+      getActivosAdministrativos():Observable<Docente[]>
+      {
+        return this.http.get<Docente[]>(this.baseUrl+'api/Docente/ActivoAdministrativo').pipe(
+        tap(/*=>this.log('Se Consulta la información')*/),
+        catchError(this.handleError<Docente[]>('getAll',[]))
+        );
+      }
+
       /** GET task by id. Will 404 if id not found */
       get(id: number): Observable<Docente>
       {

@@ -27,22 +27,22 @@ namespace ProyectoWeb.Controllers
             }
         }
 
-        // GET: api/Task
+        // GET: api/Pregunta
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Pregunta>>> GetTaskItems()
         {
         return await _context.Preguntas.ToListAsync();
         }
 
-        // GET: api/Pregunta
+        // GET: api/Pregunta/Activas
         [HttpGet("Activas")]
         public async Task<ActionResult<IEnumerable<Pregunta>>> GetTaskActivas()
         {
-        return await _context.Preguntas.Where(p=>p.Estado==true).ToListAsync();
+            return await _context.Preguntas.Where(p=>p.Estado==true).ToListAsync();
         }
 
 
-        // GET: api/Task/5
+        // GET: api/Pregunta/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Pregunta>> GetTaskItem(int id)
         {
@@ -54,7 +54,7 @@ namespace ProyectoWeb.Controllers
             return pregunta;
         }
 
-        // POST: api/Task
+        // POST: api/Pregunta
         [HttpPost]
         public async Task<ActionResult<Pregunta>> PostTaskItem(Pregunta item)
         {
@@ -63,7 +63,7 @@ namespace ProyectoWeb.Controllers
             return CreatedAtAction(nameof(GetTaskItem), new { id = item.Id }, item);
         }
 
-        // PUT: api/Task/5
+        // PUT: api/Pregunta/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutTaskItem(int id, Pregunta item)
         {
@@ -76,7 +76,7 @@ namespace ProyectoWeb.Controllers
             return NoContent();
         }
 
-        // DELETE: api/Todo/5
+        // DELETE: api/Pregunta/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTaskItem(int id)
         {

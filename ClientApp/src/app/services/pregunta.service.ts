@@ -34,6 +34,14 @@ export class PreguntaService {
     );
   }
 
+  getActivas():Observable<Pregunta[]>
+  {
+    return this.http.get<Pregunta[]>(this.baseUrl+'api/Pregunta/Activas').pipe(
+    tap(/*=>this.log('Se Consulta la información')*/),
+    catchError(this.handleError<Pregunta[]>('getAll',[]))
+    );
+  }
+
   /** GET task by id. Will 404 if id not found */
   get(id: number): Observable<Pregunta>
   {

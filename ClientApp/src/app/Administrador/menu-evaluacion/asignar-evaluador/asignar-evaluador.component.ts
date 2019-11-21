@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Docente } from '../../../models/docente';
+import { DocenteServiceService } from '../../../services/docente.service';
 
 @Component({
   selector: 'app-asignar-evaluador',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AsignarEvaluadorComponent implements OnInit {
 
-  constructor() { }
-
+  docentes : Docente[];
+  constructor(private docenteservice:DocenteServiceService)
+  { }
   ngOnInit() {
+    this.getAll();
+  }
+  getAll(){
+    this.docenteservice.getActivosAdministrativos().subscribe(docentes=>this.docentes=docentes);
   }
 
 }
