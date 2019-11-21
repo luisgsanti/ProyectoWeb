@@ -1,6 +1,19 @@
-import { Component, OnInit } from '@angular/core'; 
-import { DocenteServiceService } from '../../../services/docente.service';
-import { Docente } from '../../../models/docente';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
+import {
+  DocenteServiceService
+} from '../../../services/docente.service';
+import {
+  Docente
+} from '../../../models/docente';
+
+import {
+  FormBuilder,
+  FormGroup,
+  Validators
+} from '@angular/forms'
 
 @Component({
   selector: 'app-agregar-docentes',
@@ -9,15 +22,53 @@ import { Docente } from '../../../models/docente';
 })
 export class AgregarDocentesComponent implements OnInit {
 
-  constructor(private docenteservice:DocenteServiceService) { } 
-  docente: Docente; 
-  
-  ngOnInit() {
-    this.docente = {id:0,identificacion:'', primerNombre:'', segundoNombre:'', primerApellido:'', segundoApellido:'', correo:'', fechaNacimiento:'', genero:'', estado:'' ,cargo:'',/*telefono:0,*/ facultad:''};
-  }
-   add() {
+  registerForm: FormGroup;
+  submitted = false;
 
-      this.docenteservice.add(this.docente)
+  constructor(private docenteservice: DocenteServiceService, private formBuilder: FormBuilder) {}
+  docente: Docente;
+
+  ngOnInit() {
+    this.registerForm = this.formBuilder.group({
+      identificacion: ['', Validators.required],
+      primerNombre: ['', Validators.required],
+      segundoNombre: [''],
+      primerApellido: ['', Validators.required],
+      segundoApellido: [''],
+      genero: ['', Validators.required],
+      //fechaNacimiento:  ['', Validators.required], 
+      correo: ['', Validators.required],
+      estado: [''],
+      //telefono:  ['', Validators.required],
+      cargo: ['', Validators.required],
+      programa: ['', Validators.required],
+      facultad: ['', Validators.required],
+    });
+
+    this.docente = new Docente();
+  }
+
+  add() {
+
+    this.docenteservice.add(this.docente)
       .subscribe();
   }
+
+  get f() {
+    return this.registerForm.controls;
+  }
+
+  onSubmit() {
+    this.submitted = true;
+    if (this.registerForm.invalid) {
+      return;
+    }
+    this.add();
+  }
+
+  onReset() {
+    this.submitted = false;
+    this.registerForm.reset();
+  }
+
 }

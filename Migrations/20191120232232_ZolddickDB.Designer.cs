@@ -9,7 +9,7 @@ using ProyectoWeb.Models;
 namespace ProyectoWeb.Migrations
 {
     [DbContext(typeof(DocenteContext))]
-    [Migration("20191113153642_ZolddickDB")]
+    [Migration("20191120232232_ZolddickDB")]
     partial class ZolddickDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,30 +28,38 @@ namespace ProyectoWeb.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Cargo")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Correo")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Estado")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Facultad")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FechaNacimiento")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Genero")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Identificacion")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PrimerApellido")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PrimerNombre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Programa")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SegundoApellido")
@@ -59,9 +67,6 @@ namespace ProyectoWeb.Migrations
 
                     b.Property<string>("SegundoNombre")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Telefono")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -79,6 +84,7 @@ namespace ProyectoWeb.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Descripcion")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("Estado")

@@ -12,17 +12,16 @@ namespace ProyectoWeb.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Identificacion = table.Column<string>(nullable: true),
-                    PrimerNombre = table.Column<string>(nullable: true),
+                    Identificacion = table.Column<string>(nullable: false),
+                    PrimerNombre = table.Column<string>(nullable: false),
+                    PrimerApellido = table.Column<string>(nullable: false),
+                    Correo = table.Column<string>(nullable: false),
+                    Genero = table.Column<string>(nullable: false),
+                    Cargo = table.Column<string>(nullable: false),
+                    Facultad = table.Column<string>(nullable: false),
+                    Programa = table.Column<string>(nullable: false),
                     SegundoNombre = table.Column<string>(nullable: true),
-                    PrimerApellido = table.Column<string>(nullable: true),
                     SegundoApellido = table.Column<string>(nullable: true),
-                    Correo = table.Column<string>(nullable: true),
-                    FechaNacimiento = table.Column<string>(nullable: true),
-                    Telefono = table.Column<int>(nullable: false),
-                    Genero = table.Column<string>(nullable: true),
-                    Cargo = table.Column<string>(nullable: true),
-                    Facultad = table.Column<string>(nullable: true),
                     Estado = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -36,7 +35,7 @@ namespace ProyectoWeb.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Descripcion = table.Column<string>(nullable: true),
+                    Descripcion = table.Column<string>(nullable: false),
                     Categoria = table.Column<string>(nullable: true),
                     Estado = table.Column<bool>(nullable: false)
                 },

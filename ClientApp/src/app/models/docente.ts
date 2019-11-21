@@ -6,10 +6,11 @@ export class Docente {
     primerApellido: string;
     segundoApellido: string;
     correo: string;
-    fechaNacimiento: string;
+    //fechaNacimiento: string;
     genero: string;
     //telefono: number;
     estado: string;
     cargo: string;
+    programa: string;
     facultad: string;
 }

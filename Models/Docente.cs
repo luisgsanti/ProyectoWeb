@@ -14,6 +14,7 @@ namespace ProyectoWeb.Models
         [Required] public string Genero { get; set; }
         [Required] public string Cargo { get; set; }
         [Required] public string Facultad { get; set; }
+        [Required] public string Programa { get; set; }
 
         public string SegundoNombre { get; set; }
         public string SegundoApellido { get; set; }

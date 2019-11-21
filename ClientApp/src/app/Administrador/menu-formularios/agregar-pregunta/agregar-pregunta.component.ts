@@ -1,6 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { PreguntaService } from '../../../services/pregunta.service';
-import { Pregunta } from '../../../models/pregunta';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
+import {
+  PreguntaService
+} from '../../../services/pregunta.service';
+import {
+  Pregunta
+} from '../../../models/pregunta';
+import {
+  FormBuilder,
+  FormGroup,
+  Validators
+} from '@angular/forms'
 
 @Component({
   selector: 'app-agregar-pregunta',
@@ -9,18 +21,41 @@ import { Pregunta } from '../../../models/pregunta';
 })
 export class AgregarPreguntaComponent implements OnInit {
 
-  constructor(private preguntaService: PreguntaService) { } 
-  pregunta: Pregunta; 
+  registerForm: FormGroup;
+  submitted = false;
+
+  constructor(private preguntaService: PreguntaService, private formBuilder: FormBuilder) {}
+  pregunta: Pregunta;
 
   ngOnInit() {
-    this.pregunta = {id: 0, descripcion: '', categoria: '', estado: false};
+    this.registerForm = this.formBuilder.group({
+      descripcion: ['', Validators.required],
+      categoria: ['', Validators.required],
+      estado: [''],
+    });
+    this.pregunta = new Pregunta();
   }
 
   add() {
     this.preguntaService.add(this.pregunta)
-    .subscribe(/*pregunta => {
-    alert('Se agrego nueva pregun ta')
-  }*/);
-}
+      .subscribe( );
+  }
+
+  get f() {
+    return this.registerForm.controls;
+  }
+
+  onSubmit() {
+    this.submitted = true;
+    if (this.registerForm.invalid) {
+      return;
+    }
+    this.add();
+  }
+
+  onReset() {
+    this.submitted = false;
+    this.registerForm.reset();
+  }
 
 }

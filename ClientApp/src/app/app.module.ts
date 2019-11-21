@@ -26,6 +26,8 @@ import { AgregarPreguntaComponent } from './Administrador/menu-formularios/agreg
 import { ConsultarPreguntasComponent } from './Administrador/menu-formularios/consultar-preguntas/consultar-preguntas.component';
 import { AsignarEvaluadorComponent } from './Administrador/menu-evaluacion/asignar-evaluador/asignar-evaluador.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +60,8 @@ import { AsignarEvaluadorComponent } from './Administrador/menu-evaluacion/asign
     /*HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
       ),*/
-      AppRoutingModule
+      AppRoutingModule,
+      ReactiveFormsModule,
     ],
     providers: [],
     bootstrap: [AppComponent]

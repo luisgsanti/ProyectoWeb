@@ -23,9 +23,10 @@ namespace ProyectoWeb.Controllers
                 _context.Docentes.Add(new Docente { Identificacion="12345", PrimerNombre= "Luis",
                                                     SegundoNombre="Eduardo", PrimerApellido="Gomez",
                                                     SegundoApellido="Santiago", Correo= "luis@gmai.com",
-                                                    /*FechaNacimiento="30/06/00",*/ Genero="Masculino", 
-                                                    /*Telefono=1234,*/Cargo="Administrativo", 
-                                                    Facultad= "Ing. Sistemas", Estado="ACTIVO" });
+                                                    /*FechaNacimiento="30/06/00",*/ Genero="MASCULINO", 
+                                                    /*Telefono=1234,*/Cargo="DOCENTE", 
+                                                    Facultad= "CIENCIAS DE LA SALUD", Programa= "ENFERMERÍA",
+                                                    Estado="ACTIVO" });
                 _context.SaveChanges();
             }
         }
