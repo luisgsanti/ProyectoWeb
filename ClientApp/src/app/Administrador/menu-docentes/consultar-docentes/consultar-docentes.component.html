@@ -6,6 +6,12 @@
   </div>
 
   <br>
+  <div class="row">
+    <div class="col-6">
+      <input [(ngModel)]="searchText" type="text" class="form-control" placeholder="Type to filter">
+    </div>
+  </div>
+  <hr>
 
   <div class="table-container">
     <table class="table-striped">
@@ -25,7 +31,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let docente of docentes">
+        <tr *ngFor="let docente of docentes | filtroDocente:searchText;">
           <td>{{docente.id}}</td>
           <td>{{docente.identificacion}}</td>
           <td>{{docente.primerNombre}}</td>

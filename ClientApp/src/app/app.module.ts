@@ -27,6 +27,7 @@ import { ConsultarPreguntasComponent } from './Administrador/menu-formularios/co
 import { AsignarEvaluadorComponent } from './Administrador/menu-evaluacion/asignar-evaluador/asignar-evaluador.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { FiltroDocentePipe } from './Filtros/filtro-docente.pipe';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     PrincipalComponent,
     AgregarPreguntaComponent,
     ConsultarPreguntasComponent,
-    AsignarEvaluadorComponent
+    AsignarEvaluadorComponent,
+    FiltroDocentePipe
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
