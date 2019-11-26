@@ -31,7 +31,9 @@
             <td>{{docente.correo}}</td>
             <td>{{docente.estado}}</td>
             <td>{{docente.cargo}}</td>
-            <td><button (click)="cambiarEstado(pregunta)" class=" btn btn-primary">Asignar</button></td>
+            <td></td>
+            <td></td>
+            <td><button (click)="openLg(content)"><span><i class="far fa-edit"></i></span></button></td>
           </tr>
         </tbody>
       </table>
@@ -41,4 +43,19 @@
   </div>
 
   
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Asignar Calificadores</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger mb-1 mr-1" (click)="modal.close('Close click')">Cancelar</button>
+    </div>
+  </ng-template>
+
 <app-barra-de-navegacion></app-barra-de-navegacion>

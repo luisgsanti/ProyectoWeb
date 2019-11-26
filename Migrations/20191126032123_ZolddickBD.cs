@@ -2,10 +2,27 @@
 
 namespace ProyectoWeb.Migrations
 {
-    public partial class ZolddickDB : Migration
+    public partial class ZolddickBD : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Calificaciones",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id_Calificador = table.Column<string>(nullable: false),
+                    Id_DocenteCalificado = table.Column<string>(nullable: false),
+                    Tipo_Calificador = table.Column<string>(nullable: false),
+                    nota = table.Column<decimal>(nullable: false),
+                    fecha_Calificacion = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Calificaciones", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Docentes",
                 columns: table => new
@@ -36,7 +53,7 @@ namespace ProyectoWeb.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Descripcion = table.Column<string>(nullable: false),
-                    Categoria = table.Column<string>(nullable: true),
+                    Categoria = table.Column<string>(nullable: false),
                     Estado = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
@@ -47,6 +64,9 @@ namespace ProyectoWeb.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Calificaciones");
+
             migrationBuilder.DropTable(
                 name: "Docentes");
 

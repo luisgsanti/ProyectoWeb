@@ -56,7 +56,7 @@ export class PreguntaService {
 update (pregunta: Pregunta): Observable<any> {
   const url =`${this.baseUrl + 'api/Pregunta'}/${pregunta.id}`;
   return this.http.put(url, pregunta, httpOptions).pipe(
-  tap(_ => this.log(`updated pregunta id=${pregunta.id}`)),
+  tap(/*_ => this.log(`updated pregunta id=${pregunta.id}`)*/),
   catchError(this.handleError<any>('pregunta'))
   );
 }

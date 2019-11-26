@@ -11,5 +11,7 @@ namespace ProyectoWeb.Models
         public DbSet<Docente> Docentes { get; set; }
 
         public DbSet<Pregunta> Preguntas { get; set; }
+
+        public DbSet<Calificaciones> Calificaciones { get; set; }
     }
 }

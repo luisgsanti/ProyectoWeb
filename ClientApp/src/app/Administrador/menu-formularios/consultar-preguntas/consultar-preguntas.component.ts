@@ -25,7 +25,6 @@ export class ConsultarPreguntasComponent implements OnInit {
   }
   cambiarEstado(pregunta:Pregunta): void {
 
-    
       pregunta.estado= !pregunta.estado;
     
       this.preguntaService.update(pregunta)
