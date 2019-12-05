@@ -32,9 +32,23 @@
         </div>
       </div>
       <!-- sidebar-search  -->
+      <div class="sidebar-header" *ngIf="isAuthenticated()">
+        <div class="user-pic">
+          <img class="img-responsive img-rounded"
+            src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
+            alt="User picture">
+        </div>
+        <div style="cursor: default" class="user-info">
+          <span class="user-name"><strong>Administrador</strong>
+          </span>
+          <span class="user-role">Administrador</span>
+          <span class="user-status">
+            <i class="fa fa-circle"></i>
+            <span>Online</span>
+          </span>
+        </div>
+      </div>
       <div class="sidebar-menu" *ngIf="isAuthenticated()">
-          <button class=" btn btn-primary" (click)="activar()"> activar</button> 
-
         <ul>
           <br>
           <li class="sidebar-dropdown">
@@ -104,6 +118,8 @@
         </ul>
       </div>
       <!-- sidebar-menu  -->
+      <button class=" btn btn-primary" (click)="activar()"> activar</button> 
+
     </div>
     <!-- sidebar-content  -->
     <div class="sidebar-footer">

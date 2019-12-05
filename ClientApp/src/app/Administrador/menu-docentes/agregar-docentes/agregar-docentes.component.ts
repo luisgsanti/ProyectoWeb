@@ -5,6 +5,9 @@ import {
 import {
   DocenteServiceService
 } from '../../../services/docente.service';
+
+import { CalificadorService } from "../../../services/calificador.service";
+
 import {
   Docente
 } from '../../../models/docente';
@@ -14,6 +17,7 @@ import {
   FormGroup,
   Validators
 } from '@angular/forms'
+import { Calificaciones } from 'src/app/models/calificaciones';
 
 @Component({
   selector: 'app-agregar-docentes',
@@ -25,8 +29,9 @@ export class AgregarDocentesComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
 
-  constructor(private docenteservice: DocenteServiceService, private formBuilder: FormBuilder) {}
+  constructor(private docenteservice: DocenteServiceService,private calificadorService: CalificadorService, private formBuilder: FormBuilder ) {}
   docente: Docente;
+  calificacion: Calificaciones
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
@@ -46,12 +51,17 @@ export class AgregarDocentesComponent implements OnInit {
     });
 
     this.docente = new Docente();
+    this.calificacion = new  Calificaciones();
   }
 
   add() {
 
     this.docenteservice.add(this.docente)
       .subscribe();
+    
+    this.calificacion.id_DocenteCalificado = this.docente.identificacion; 
+    alert(this.calificacion.id_DocenteCalificado);
+    this.calificadorService.add(this.calificacion).subscribe();
   }
 
   get f() {

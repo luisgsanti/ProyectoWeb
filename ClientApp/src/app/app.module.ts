@@ -28,6 +28,7 @@ import { AsignarEvaluadorComponent } from './Administrador/menu-evaluacion/asign
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { FiltroDocentePipe } from './Filtros/filtro-docente.pipe';
+import { ModalDatosDocenteComponent } from './Administrador/Modals/modal-datos-docente/modal-datos-docente.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { FiltroDocentePipe } from './Filtros/filtro-docente.pipe';
     AgregarPreguntaComponent,
     ConsultarPreguntasComponent,
     AsignarEvaluadorComponent,
-    FiltroDocentePipe
+    FiltroDocentePipe,
+    ModalDatosDocenteComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -64,8 +66,12 @@ import { FiltroDocentePipe } from './Filtros/filtro-docente.pipe';
       ),*/
       AppRoutingModule,
       ReactiveFormsModule,
+      
     ],
     providers: [],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
+    entryComponents: [
+      ModalDatosDocenteComponent
+    ]
 })
 export class AppModule { }

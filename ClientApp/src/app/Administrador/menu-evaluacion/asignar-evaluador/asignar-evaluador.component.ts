@@ -13,6 +13,8 @@ import {
   NgbModal
 } from '@ng-bootstrap/ng-bootstrap';
 
+import { ModalDatosDocenteComponent} from '../../Modals/modal-datos-docente/modal-datos-docente.component';
+
 @Component({
   selector: 'app-asignar-evaluador',
   templateUrl: './asignar-evaluador.component.html',
@@ -32,18 +34,8 @@ export class AsignarEvaluadorComponent implements OnInit {
     this.docenteservice.getActivosAdministrativos().subscribe(docentes => this.docentes = docentes);
   }
 
-
-  openLg(content) {
-    this.modalService.open(content, {
-      size: 'lg'
-    });
+  open(){
+    const modalRef = this.modalService.open(ModalDatosDocenteComponent, {centered:true});
   }
-
-  openXl(content) {
-    this.modalService.open(content, {
-      size: 'xl'
-    });
-  }
-
 
 }

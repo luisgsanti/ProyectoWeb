@@ -2,7 +2,7 @@ import { Injectable,Inject } from '@angular/core';
 
 import { Observable, of, observable } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
-import { Calificador } from '../models/calificador';
+import { Calificaciones } from '../models/calificaciones';
 import { HttpHeaders } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 
@@ -18,51 +18,51 @@ export class CalificadorService {
   constructor(private http:HttpClient, @Inject('BASE_URL') private baseUrl:string ) { }
 
   /** POST: add a new task to the server */
-  add(calificador: Calificador): Observable<Calificador> {
-    return this.http.post<Calificador>(this.baseUrl+'api/Calificador', calificador, httpOptions).pipe(
-      tap((newCalificador: Calificador) => this.log(`Calificador agregado`)),
-      catchError(this.handleError<Calificador>('AddCalificador'))
+  add(calificaciones: Calificaciones): Observable<Calificaciones> {
+    return this.http.post<Calificaciones>(this.baseUrl+'api/Calificacion', calificaciones, httpOptions).pipe(
+      tap((newCalificadocion: Calificaciones) => this.log(`Calificador agregado`)),
+      catchError(this.handleError<Calificaciones>('AddCalificador'))
     )
   }
 
   /** GET Task from the server */
-  getAll():Observable<Calificador[]>
+  getAll():Observable<Calificaciones[]>
   {
-    return this.http.get<Calificador[]>(this.baseUrl+'api/Calificador').pipe(
+    return this.http.get<Calificaciones[]>(this.baseUrl+'api/Calificacion').pipe(
     tap(/*=>this.log('Se Consulta la información')*/),
-    catchError(this.handleError<Calificador[]>('getAll',[]))
+    catchError(this.handleError<Calificaciones[]>('getAll',[]))
     );
   }
 
   /** GET task by id. Will 404 if id not found */
-  get(id: number): Observable<Calificador>
+  get(id: number): Observable<Calificaciones>
   {
-    const url = `${this.baseUrl + 'api/Calificador'}/${id}`;
-    return this.http.get<Calificador>(url).pipe(
+    const url = `${this.baseUrl + 'api/Calificacion'}/${id}`;
+    return this.http.get<Calificaciones>(url).pipe(
     tap(_ => this.log(`fetched calificador id=${id}`)),
-    catchError(this.handleError<Calificador>(`getPregunta id=${id}`))
+    catchError(this.handleError<Calificaciones>(`getPregunta id=${id}`))
     );
   }
 
   /** PUT: update the Task on the server */
-  update (calificador: Calificador): Observable<any> {
-    const url =`${this.baseUrl + 'api/Calificador'}/${calificador.id}`;
-    return this.http.put(url, calificador, httpOptions).pipe(
-    tap(_ => this.log(`updated calificador id=${calificador.id}`)),
+  update (calificaciones: Calificaciones): Observable<any> {
+    const url =`${this.baseUrl + 'api/Calificacion'}/${calificaciones.id_Calificacion}`;
+    return this.http.put(url, calificaciones, httpOptions).pipe(
+    tap(_ => this.log(`updated calificador id=${calificaciones.id_Calificacion}`)),
     catchError(this.handleError<any>('calificador'))
     );
   }
 
   /** DELETE: delete the task from the server */
-  delete (calificador: Calificador | number): Observable<Calificador> {
-    const id = typeof calificador === 'number' ? calificador : calificador.id;
+  delete (calificaciones: Calificaciones | number): Observable<Calificaciones> {
+    const id = typeof calificaciones === 'number' ? calificaciones : calificaciones.id_Calificacion;
     const url =
     
-    `${this.baseUrl + 'api/Calificador'}/${id}`;
+    `${this.baseUrl + 'api/Calificacion'}/${id}`;
     
-    return this.http.delete<Calificador>(url, httpOptions).pipe(
+    return this.http.delete<Calificaciones>(url, httpOptions).pipe(
     tap(_ => this.log(`deleted calificador id=${id}`)),
-    catchError(this.handleError<Calificador>('delete Calificador'))
+    catchError(this.handleError<Calificaciones>('delete Calificador'))
     );
   }
 

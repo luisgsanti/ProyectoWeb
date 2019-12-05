@@ -13,7 +13,7 @@ import { AsignarEvaluadorComponent } from "../app/Administrador/menu-evaluacion/
 import { PrincipalComponent } from "../app/Administrador/principal/principal.component";
 import { AgregarPreguntaComponent } from "../app/Administrador/menu-formularios/agregar-pregunta/agregar-pregunta.component";
 import { ConsultarPreguntasComponent } from "../app/Administrador/menu-formularios/consultar-preguntas/consultar-preguntas.component";
-
+import { ModalDatosDocenteComponent} from "../app/Administrador/Modals/modal-datos-docente/modal-datos-docente.component"
 
 const routes: Routes = [
   { path: '', component: InicioComponent , pathMatch: 'full' },
@@ -29,6 +29,8 @@ const routes: Routes = [
   { path: 'Inicio', component: InicioComponent},
   { path: 'Adminitrador/MenuDeFormularios/AgregarPregunta', component: AgregarPreguntaComponent},
   { path: 'Adminitrador/MenuDeFormularios/ConsultarPreguntas', component: ConsultarPreguntasComponent},
+  { path: 'Adminitrador/MenuEvaluador/AsignarEvaluador/ModalsDatos', component: ModalDatosDocenteComponent},
+
 ];
 
 

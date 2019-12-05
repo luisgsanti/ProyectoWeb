@@ -217,7 +217,7 @@ ________________________________________________________________________________
   }
 
   
-}*/
+}
 
 
 body {
@@ -348,4 +348,13 @@ input[type="submit"]:active {
   .login-box {
     width: 90%;
   }
+}*/
+
+body {
+  display: flex;
+  min-height: 100vh;
+  background-image: url(../img/6.jpg);
+  height: 100%;
+  background-size: cover;
+  width: 100%;
 }
