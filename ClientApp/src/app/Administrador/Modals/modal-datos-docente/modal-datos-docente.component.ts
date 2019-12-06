@@ -1,5 +1,28 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import {
+  Component,
+  OnInit,
+  Input
+} from '@angular/core';
+import {
+  NgbActiveModal
+} from '@ng-bootstrap/ng-bootstrap';
+import {
+  Calificaciones
+} from "../../../models/calificaciones";
+
+import{
+Docente
+}from "../../../models/docente"
+
+import {
+  ActivatedRoute
+} from '@angular/router';
+import {
+  CalificadorService
+} from '../../../services/calificador.service';
+import {
+  Location
+} from '@angular/common';
 
 @Component({
   selector: 'app-modal-datos-docente',
@@ -8,10 +31,20 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class ModalDatosDocenteComponent implements OnInit {
 
-  constructor(public ActiveModal: NgbActiveModal) { }
+  calificaciones : Calificaciones[];
+
+  constructor(public ActiveModal: NgbActiveModal, private route: ActivatedRoute,
+    private calificadorService: CalificadorService) {}
+
+
+  @Input() docente: Docente;
 
   ngOnInit() {
+    this.getAll();
+  }
 
+  getAll() {
+    this.calificadorService.getAll(this.docente.identificacion).subscribe(calificaciones => this.calificaciones = calificaciones);
   }
 
 }

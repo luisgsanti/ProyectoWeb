@@ -34,8 +34,9 @@ export class AsignarEvaluadorComponent implements OnInit {
     this.docenteservice.getActivosAdministrativos().subscribe(docentes => this.docentes = docentes);
   }
 
-  open(){
+  open(docente:Docente){
     const modalRef = this.modalService.open(ModalDatosDocenteComponent, {centered:true});
+    modalRef.componentInstance.docente = docente;
   }
 
 }

@@ -32,23 +32,35 @@ export class BarraDeNavegacionComponent implements OnInit {
 
   constructor(private authorizeService: AuthService, private authService: AuthService,) { }
 
+  sw=false;
+
   login()
   {
-      this.authService.login('pedro', '12345');
+    this.authService.login('pedro', '12345');
   }
 
   logout() {
-      this.authService.logout();
+    this.authService.logout();
+    this.sw=false;
   }
 
   userName(): string {
     return this.authorizeService.getUserName();
   }
-
+  
   public isAuthenticated(): boolean
   {
-    return this.authorizeService.isAuthenticated();
+    let isAuth=this.authorizeService.isAuthenticated();
+    if(isAuth && !this.sw)
+    {
+      this.sw=true;
+      setTimeout(()=> {
+        this.activar();
+      },1300)
+    }
+    return isAuth;
   }
+
 
   isAuthenticatedRole(role: string): boolean {
       

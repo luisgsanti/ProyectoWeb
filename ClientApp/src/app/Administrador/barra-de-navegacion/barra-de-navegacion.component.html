@@ -13,22 +13,24 @@
       <div class="sidebar-header" *ngIf="!isAuthenticated()">
         <div class="user-pic">
           <img class="img-responsive img-rounded"
-          src="https://yt3.ggpht.com/a/AGF-l79A9cjzQenkHUWo-myeHheaAkm8XZDBL2-HfA=s288-c-k-c0xffffffff-no-rj-mo" class="avatar" alt="Avatar Image">
+            src="https://yt3.ggpht.com/a/AGF-l79A9cjzQenkHUWo-myeHheaAkm8XZDBL2-HfA=s288-c-k-c0xffffffff-no-rj-mo"
+            class="avatar" alt="Avatar Image">
         </div>
         <div style="cursor: default" class="user-info">
-         
+
           <div class="login-box">
-          <form>
-            <!-- USERNAME INPUT -->
-            <label for="username">Usuario</label>
-            <input type="text" placeholder="Ingrese su Usuario">
-            <!-- PASSWORD INPUT -->
-            <label for="password">Contraseña</label>
-            <input type="password" placeholder="Ingrese su Contraseña">  
-          
-            <input routerLinkActive = '["link-active"]' routerLink="/Adminitrador/principal" (click)="login()" type="submit" value="Login">
-          </form>
-        </div>        
+            <form>
+              <!-- USERNAME INPUT -->
+              <label for="username">Usuario</label>
+              <input type="text" placeholder="Ingrese su Usuario">
+              <!-- PASSWORD INPUT -->
+              <label for="password">Contraseña</label>
+              <input type="password" placeholder="Ingrese su Contraseña">
+
+              <input routerLinkActive='["link-active"]' routerLink="/Adminitrador/principal" (click)="login()"
+                type="submit" value="Login">
+            </form>
+          </div>
         </div>
       </div>
       <!-- sidebar-search  -->
@@ -57,7 +59,7 @@
               <span>Gestionar Docente</span>
             </a>
             <div class="sidebar-submenu">
-              <ul >
+              <ul>
                 <li>
                   <a routerLink="/Adminitrador/MenuDeGestion/NuevoDocente">Agregar Docentes</a>
                 </li>
@@ -118,8 +120,6 @@
         </ul>
       </div>
       <!-- sidebar-menu  -->
-      <button class=" btn btn-primary" (click)="activar()"> activar</button> 
-
     </div>
     <!-- sidebar-content  -->
     <div class="sidebar-footer">

@@ -1,6 +1,13 @@
-import { Component, OnInit } from '@angular/core'; 
-import { DocenteServiceService } from '../../../services/docente.service';
-import { Docente } from '../../../models/docente';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
+import {
+  DocenteServiceService
+} from '../../../services/docente.service';
+import {
+  Docente
+} from '../../../models/docente';
 
 @Component({
   selector: 'app-consultar-docentes',
@@ -9,14 +16,12 @@ import { Docente } from '../../../models/docente';
 })
 export class ConsultarDocentesComponent implements OnInit {
 
-  docentes : Docente[];
-  constructor(private docenteservice:DocenteServiceService)
-  { }
+  docentes: Docente[];
+  constructor(private docenteservice: DocenteServiceService) {}
   ngOnInit() {
     this.getAll();
   }
-  getAll(){
-    this.docenteservice.getAll().subscribe(docentes=>this.docentes=docentes);
-    }
+  getAll() {
+    this.docenteservice.getAll().subscribe(docentes => this.docentes = docentes);
   }
-  
+}

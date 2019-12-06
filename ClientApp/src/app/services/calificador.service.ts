@@ -26,16 +26,17 @@ export class CalificadorService {
   }
 
   /** GET Task from the server */
-  getAll():Observable<Calificaciones[]>
+  getAll(id: string):Observable<Calificaciones[]>
   {
-    return this.http.get<Calificaciones[]>(this.baseUrl+'api/Calificacion').pipe(
+    const url = `${this.baseUrl + 'api/Calificacion'}/${id}`;
+    return this.http.get<Calificaciones[]>(url).pipe(
     tap(/*=>this.log('Se Consulta la información')*/),
     catchError(this.handleError<Calificaciones[]>('getAll',[]))
     );
   }
 
   /** GET task by id. Will 404 if id not found */
-  get(id: number): Observable<Calificaciones>
+  get(id: string): Observable<Calificaciones>
   {
     const url = `${this.baseUrl + 'api/Calificacion'}/${id}`;
     return this.http.get<Calificaciones>(url).pipe(

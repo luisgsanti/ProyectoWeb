@@ -46,7 +46,12 @@ namespace ProyectoWeb.Controllers
 
         // GET: api/Task/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Calificaciones>> GetTaskItem(int id)
+        public async Task<ActionResult<IEnumerable<Calificaciones>>> GetTaskItem(string id)
+        {
+            return await _context.Calificaciones.Where(p=>p.Id_DocenteCalificado==id).ToListAsync();
+        }
+        /*
+        public async Task<ActionResult<Calificaciones>> GetTaskItem(string id)
         {
             var calificacion = await _context.Calificaciones.FindAsync(id);
             if (calificacion == null)
@@ -54,7 +59,7 @@ namespace ProyectoWeb.Controllers
                 return NotFound();
             }
             return calificacion;
-        }
+        }*/
 
         // POST: api/Task
         [HttpPost]
