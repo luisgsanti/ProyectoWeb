@@ -14,6 +14,7 @@ import { PrincipalComponent } from "../app/Administrador/principal/principal.com
 import { AgregarPreguntaComponent } from "../app/Administrador/menu-formularios/agregar-pregunta/agregar-pregunta.component";
 import { ConsultarPreguntasComponent } from "../app/Administrador/menu-formularios/consultar-preguntas/consultar-preguntas.component";
 import { ModalDatosDocenteComponent} from "../app/Administrador/Modals/modal-datos-docente/modal-datos-docente.component"
+import { ModalAsignarJefeComponent} from "../app/Administrador/Modals/modal-asignar-jefe/modal-asignar-jefe.component";
 
 const routes: Routes = [
   { path: '', component: InicioComponent , pathMatch: 'full' },
@@ -30,7 +31,7 @@ const routes: Routes = [
   { path: 'Adminitrador/MenuDeFormularios/AgregarPregunta', component: AgregarPreguntaComponent},
   { path: 'Adminitrador/MenuDeFormularios/ConsultarPreguntas', component: ConsultarPreguntasComponent},
   { path: 'Adminitrador/MenuEvaluador/AsignarEvaluador/ModalsDatos', component: ModalDatosDocenteComponent},
-
+  { path: 'Adminitrador/MenuEvaluador/AsignarEvaluador/ModalsAsignarJefe', component: ModalAsignarJefeComponent},
 ];
 
 

@@ -19,14 +19,14 @@
       <input readonly class="form-control" type="text" placeholder="{{docente.primerNombre}}">
     </div>
     <div class="col-md-4 mb-3">
-      <label>Primer Apellido:</label>
+      <label class="y">Primer Apellido:</label>
       <input readonly class="form-control" type="text" placeholder="{{docente.primerApellido}}">
     </div>
   </div>
 
   <div calss="form-row">
     <div>
-        <button class="form-control"><span><i class="fas fa-user-plus"></i></span>JEFE CALIFICADOR:</button>
+        <button class="form-control" (click)="open(docente)"><span><i class="fas fa-user-plus"></i></span>JEFE CALIFICADOR:</button>
       <div *ngFor="let calificacion of calificaciones">
         <input readonly *ngIf="calificacion.tipo_Calificador==='JEFE'" class="form-control" type="text"
           [(ngModel)]="calificacion.id_Calificador">

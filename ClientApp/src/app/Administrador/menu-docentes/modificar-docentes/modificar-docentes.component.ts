@@ -54,6 +54,7 @@ export class ModificarDocentesComponent implements OnInit {
     .subscribe(hero => this.docente = hero);
     }
     
+    
 
     update(): void {
       this.docenteService.update(this.docente)

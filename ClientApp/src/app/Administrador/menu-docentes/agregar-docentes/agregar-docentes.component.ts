@@ -60,7 +60,7 @@ export class AgregarDocentesComponent implements OnInit {
       .subscribe();
     
     this.calificacion.id_DocenteCalificado = this.docente.identificacion; 
-    alert(this.calificacion.id_DocenteCalificado);
+    this.calificacion.tipo_Calificador="AUTOEVALUACION"
     this.calificadorService.add(this.calificacion).subscribe();
   }
 
